@@ -129,7 +129,7 @@ class ElementoController extends Controller
             $imagenServidor=Image::make($imagen);//crear instancia de la imagen
             $imagenServidor->fit(1000,1000);//fijar relacion de acpecto
 
-            $imagenPath = 'img/imagenPath/' . $nombreImagen;//ruta donde se guarda el archivo
+            $imagenPath = 'elementos/' . $nombreImagen;//ruta donde se guarda el archivo
             $imagenServidor->save($imagenPath);
         }else{
             $nombreImagen="";

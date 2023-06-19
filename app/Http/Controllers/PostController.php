@@ -17,7 +17,6 @@ class PostController extends Controller
     //guardar la reseña en bbdd
     public function store(Request $request, elemento $elemento){
         
-        dd($request->puntuacion);
         //VALIDACION
         $this->validate($request, [
             'comentario' => 'required',

@@ -1,0 +1,1 @@
+<h1 class="text-2xl md:text-2xl lg:text-4xl text-gray-900 dark:text-gray-100">Rascando<span class="text-yellow-500 font-extrabold">★</span>Estrellas</h1>

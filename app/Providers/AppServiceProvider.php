@@ -21,7 +21,6 @@ class AppServiceProvider extends ServiceProvider
     public function boot(): void
     {
         if($this->app->environment('production')){
-            file_put_contents(base_path('Procfile'), "web: vendor/bin/heroku-php-apache2 public/\n", FILE_APPEND);
             URL::forceScheme('https');
         }
     }

@@ -43,7 +43,7 @@
 
             <!-- INICIO SI EL USUARIO NO ESTA LOGEADO -->
            @guest
-                <div class="hidden sm:flex sm:items-center sm:ml-6">
+                <div class="hidden lg:flex sm:items-center sm:ml-6">
                     <a href="{{ route('login') }}" class="font-semibold text-gray-600 hover:text-gray-900 dark:text-gray-400 dark:hover:text-white">Iniciar Sesión</a>
                     <a href="{{ route('register') }}" class="ml-4 font-semibold text-gray-600 hover:text-gray-900 dark:text-gray-400 dark:hover:text-white focus:outline focus:outline-2 focus:rounded-sm">Registrarse</a>
                 </div>
@@ -51,9 +51,9 @@
             <!-- FIN SI EL USUARIO NO ESTA LOGEADO -->
 
 
-            <!-- INICIO SI EL USUARIO ESTA LOGEADO -->
-            @auth
+            
             <!-- Settings Dropdown -->
+            @auth
             <div class="hidden lg:flex sm:items-center sm:ml-6">
                 <x-dropdown align="right" width="48">
                     <x-slot name="trigger">
@@ -120,6 +120,7 @@
                     </x-slot>
                 </x-dropdown>
             </div>
+            @endauth
 
             <!-- Hamburger -->
             <div class="-mr-2 flex items-center lg:hidden">
@@ -163,12 +164,22 @@
         </div>
 
         <!-- Responsive Settings Options -->
+        
         <div class="pt-4 pb-1 border-t border-gray-200 dark:border-gray-600">
+            @guest
+                <div class="flex flex-col gap-3 ml-4">
+                    <a href="{{ route('login') }}" class="space-y-1 font-semibold text-gray-600 hover:text-gray-900 dark:text-gray-400 dark:hover:text-white">Iniciar Sesión</a>
+                    <a href="{{ route('register') }}" class=" space-y-1font-semibold text-gray-600 hover:text-gray-900 dark:text-gray-400 dark:hover:text-white focus:outline focus:outline-2 focus:rounded-sm">Registrarse</a>
+                </div>
+                @endguest
+            @auth
             <div class="px-4">
                 <div class="font-medium text-base text-gray-800 dark:text-gray-200">{{ Auth::user()->name }}</div>
             </div>
+            @endauth
 
             <div class="mt-3 space-y-1">
+                @auth
                 <x-responsive-nav-link :href="route('dashboard', auth()->user()->name)" :active="request()->routeIs('dashboard')">
                     <div class="flex gap-2">
                         <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6 text-gray-700 dark:text-gray-300">
@@ -214,9 +225,9 @@
                         </div> 
                     </x-responsive-nav-link>
                 </form>
+                @endauth
             </div>
         </div>
     </div>
-    @endauth
-    <!-- FIN SI EL USUARIO ESTA LOGEADO -->
+    
 </nav>

@@ -3,6 +3,7 @@ Proyecto final de DAW. Rascando Estrellas es una web para realizar reseñas y pu
 Algunas de sus funcionalidades son:
 
 - Sistema de autenticación de usuarios para registrarse e iniciar sesión.
+- Editar perfil de usuario para añadir una imagen de usuario, modificar nombre, correo, contraseña, etc.
 - Página principal con destacados, secciones para las películas, series y videojuegos, página de perfil para cada usuario, etc.
 - Publicar una puntuación y reseña sobre un contenido.
 - Funcionalidad de likes para las reseñas.
